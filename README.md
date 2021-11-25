@@ -6,6 +6,11 @@
 
 ## 建置
 
+- 執行install
+```bash
+composer install --ignore-platform-reqs 
+```
+
 - 複製環境變數
 ```bash
 cp .env.example .env
