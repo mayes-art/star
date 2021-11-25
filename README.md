@@ -36,6 +36,8 @@ FORWARD_REDIS_PORT=自訂埠號
 - Redis
 - PHP
 
+
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
