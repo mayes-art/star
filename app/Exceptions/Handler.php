@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
+use App\Constants\StatusCode;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -34,8 +36,22 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        $this->reportable(function (Throwable $e) {
-            //
+        $this->reportable(function (\Exception $e, $request) {
+            $data = null;
+            if (env('APP_ENV') !== 'production') {
+                $data = [
+                    'code' => $e->getCode(),
+                    'message' => $e->getMessage(),
+                    'line' => $e->getLine()
+                ];
+            }
+
+            return response()->fail(
+                __('messages.system_error'),
+                StatusCode::FAIL,
+                SymfonyResponse::HTTP_INTERNAL_SERVER_ERROR,
+                $data
+            );
         });
     }
 }
