@@ -4,7 +4,7 @@
 
 - Laravel 8.73.2
 
-## 建置
+## Mac、Linux建置
 
 - 執行install
 ```bash
@@ -34,6 +34,15 @@ FORWARD_REDIS_PORT=自訂埠號
 ```bash
 ./vendor/bin/sail down
 ```
+
+## Windows 建置
+
+有以下兩種方式: 
+
+1. 使用laradock
+
+2. 安裝WSL2 (安裝後與Mac、Linux建置方式相同)
+
 
 ## 服務
 
