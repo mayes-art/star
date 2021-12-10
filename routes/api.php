@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,8 +27,7 @@ Route::post('/', function () {
 // 登入點
 Route::post('login', [AuthController::class, 'login']);
 
-// V1 版本
-Route::prefix('v1')->middleware(['token.verify'])->group(function () {
+Route::middleware(['token.verify'])->group(function () {
     Route::get('test', function () {
         echo 'v1 test';
     });
@@ -39,17 +39,29 @@ Route::prefix('v1')->middleware(['token.verify'])->group(function () {
 
     // 使用者群組管理
     Route::prefix('role')->group(function () {
-
+        Route::get('list', [RoleController::class, 'list']);
+        Route::post('add', [RoleController::class, 'add']);
+        Route::put('edit/{id}', [RoleController::class, 'edit']);
+        Route::get('delete/{id}', [RoleController::class, 'delete']);
     });
 
     // 商品管理
+    Route::prefix('item')->group(function () {
+
+    });
 
     // 商品類型管理
+    Route::prefix('item-category')->group(function () {
+
+    });
 
     // 訂單管理
-});
+    Route::prefix('order')->group(function () {
 
-// V2 版本
-Route::prefix('v2')->group(function () {
+    });
 
+    // 消息管理
+    Route::prefix('news')->group(function () {
+
+    });
 });

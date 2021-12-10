@@ -51,6 +51,16 @@ FORWARD_REDIS_PORT=自訂埠號
 - PHP
 
 
+## DB設置
+因使用MySQL8，需調整密碼驗證方式
+
+進入mysql容器內登入，執行:
+```bash
+MySQL> ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
+
+MySQL> FLUSH PRIVILEGES;
+```
+
 
 ## License
 

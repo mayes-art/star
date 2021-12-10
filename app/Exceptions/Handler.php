@@ -36,7 +36,7 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        $this->reportable(function (\Exception $e, $request) {
+        $this->reportable(function (\Exception $e) {
             $data = null;
             if (env('APP_ENV') !== 'production') {
                 $data = [
@@ -47,10 +47,10 @@ class Handler extends ExceptionHandler
             }
 
             return response()->fail(
+                null,
                 __('messages.system_error'),
                 StatusCode::FAIL,
-                SymfonyResponse::HTTP_INTERNAL_SERVER_ERROR,
-                $data
+                SymfonyResponse::HTTP_INTERNAL_SERVER_ERROR
             );
         });
     }
