@@ -18,11 +18,12 @@ class CreateUsersTable extends Migration
             $table->string('email')->comment('信箱');
             $table->string('account')->unique()->comment('帳號');
             $table->string('nickname')->comment('暱稱');
-            $table->bigInteger('group_id')->comment('使用者群組');
+            $table->integer('role_id')->comment('角色ID');
             $table->string('password')->comment('密碼');
-            $table->tinyInteger('enable')->comment('啟用狀態');
-            $table->timestamps();
-            $table->timestamp('last_login_at')->nullable()->comment('最後登入時間');
+            $table->tinyInteger('status')->comment('啟用狀態');
+            $table->datetime('created_at')->nullable()->comment('新增時間');
+            $table->datetime('updated_at')->nullable()->comment('更新時間');
+            $table->datetime('last_login_at')->nullable()->comment('最後登入時間');
         });
     }
 
