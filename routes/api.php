@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,7 +35,10 @@ Route::middleware(['token.verify'])->group(function () {
 
     // 使用者管理
     Route::prefix('user')->group(function () {
-
+        Route::get('list', [UserController::class, 'list']);
+        Route::get('{id}', [UserController::class, 'info']);
+        Route::put('{id}', [UserController::class, 'edit']);
+        Route::delete('{id}', [UserController::class, 'delete']);
     });
 
     // 使用者群組管理
