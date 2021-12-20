@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Constants\Pagination;
 use App\Models\Role;
 
 class RoleRepository extends BaseRepository
@@ -20,6 +21,16 @@ class RoleRepository extends BaseRepository
 
     public function getList()
     {
-        return $this->model->all();
+        return $this->model->paginate(Pagination::ROLE);
+    }
+
+    public function getOne($id)
+    {
+        return $this->model->find($id);
+    }
+
+    public function updateRole($id, $data)
+    {
+        return $this->model->where('id', $id)->update($data);
     }
 }

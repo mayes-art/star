@@ -41,7 +41,7 @@ Route::middleware(['token.verify'])->group(function () {
     Route::prefix('role')->group(function () {
         Route::get('list', [RoleController::class, 'list']);
         Route::post('add', [RoleController::class, 'add']);
-        Route::put('edit/{id}', [RoleController::class, 'edit']);
+        Route::put('edit', [RoleController::class, 'edit']);
         Route::get('delete/{id}', [RoleController::class, 'delete']);
     });
 

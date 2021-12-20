@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Constants\StatusCode;
 use App\Http\Requests\Role\RoleAddRequest;
+use App\Http\Requests\Role\RoleEditRequest;
+use App\Http\Requests\Role\RoleListRequest;
 use App\Services\RoleService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 class RoleController extends Controller
 {
@@ -19,7 +22,7 @@ class RoleController extends Controller
     /**
      * 角色列表
      */
-    public function list()
+    public function list(RoleListRequest $request)
     {
         return response()->ok($this->roleService->getRoles());
     }
@@ -37,10 +40,15 @@ class RoleController extends Controller
     /**
      * 更新角色
      */
-    public function edit($id)
+    public function edit(RoleEditRequest $request)
     {
-        // TODO 更新角色
-        return response()->ok($id);
+        $data = $request->validated();
+
+        if($this->roleService->editRole($request->role_id, Arr::except($data, 'role_id'))) {
+            return response()->ok();
+        }
+
+        return response()->fail();
     }
 
     /**
