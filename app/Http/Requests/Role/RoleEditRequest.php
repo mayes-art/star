@@ -35,7 +35,7 @@ class RoleEditRequest extends BaseRequest
         return [
             'role_id.required'    => __('messages.required', ['v' => __('params.role_id')]),
             'role_id.exists'      => __('messages.is_empty', ['v' => __('params.role_id')]),
-            'name.required'      => __('messages.required', ['v' => __('params.role_name')]),
+            'name.required'       => __('messages.required', ['v' => __('params.role_name')]),
             'permission.required' => __('messages.required', ['v' => __('params.permission')])
         ];
     }

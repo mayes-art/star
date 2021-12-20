@@ -44,7 +44,7 @@ class RoleController extends Controller
     {
         $data = $request->validated();
 
-        if($this->roleService->editRole($request->role_id, Arr::except($data, 'role_id'))) {
+        if($this->roleService->editRole($data['role_id'], Arr::except($data, 'role_id'))) {
             return response()->ok();
         }
 

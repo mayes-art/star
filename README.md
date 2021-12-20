@@ -61,6 +61,14 @@ MySQL> ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'password'
 MySQL> FLUSH PRIVILEGES;
 ```
 
+## 排錯工具
+
+服務啟動後，使用路徑
+
+http://localhost/telescope
+
+
+
 
 ## License
 
