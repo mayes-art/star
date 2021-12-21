@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Arr;
 use App\Constants\StatusCode;
 use App\Services\UserService;
 use App\Http\Requests\User\UserAddRequest;
@@ -45,9 +46,13 @@ class UserController extends Controller
     /**
      * 更新使用者
      */
-    public function edit(UserEditRequest $request, $id)
+    public function edit(UserEditRequest $request)
     {
-        $this->userService->editUser($id, $request->validated());
+        $params = $request->validated();
+
+        if ($this->userService->editUser($params['id'], Arr::except($params, 'id'))) {
+            return response()->ok();
+        }
 
         return response()->ok(null, __('messages.update_success'), StatusCode::UPDATE_OK);
     }

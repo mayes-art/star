@@ -17,14 +17,6 @@ class UserEditRequest extends BaseRequest
         return true;
     }
 
-    public function all($keys = null) 
-    {
-        $data = parent::all($keys);
-        $data['id'] = $this->route('id');
-
-        return $data;
-    }
-
     /**
      * Get the validation rules that apply to the request.
      *

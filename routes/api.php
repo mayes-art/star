@@ -38,7 +38,7 @@ Route::middleware(['token.verify'])->group(function () {
         Route::get('list', [UserController::class, 'list']);
         Route::post('add', [UserController::class, 'add']);
         Route::get('{id}', [UserController::class, 'info']);
-        Route::put('{id}', [UserController::class, 'edit']);
+        Route::put('edit', [UserController::class, 'edit']);
         Route::delete('{id}', [UserController::class, 'delete']);
     });
 
