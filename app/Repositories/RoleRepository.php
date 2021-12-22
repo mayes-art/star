@@ -14,7 +14,7 @@ class RoleRepository extends BaseRepository
         $this->model = $model;
     }
 
-    public function createRole($data)
+    public function createRole(array $data)
     {
         return $this->model->create($data);
     }
@@ -24,13 +24,18 @@ class RoleRepository extends BaseRepository
         return $this->model->paginate(Pagination::ROLE);
     }
 
-    public function getOne($id)
+    public function getOne(int $id)
     {
         return $this->model->find($id);
     }
 
-    public function updateRole($id, $data)
+    public function updateRole(int $id, array $data)
     {
         return $this->model->where('id', $id)->update($data);
+    }
+
+    public function deleteRole(int $id)
+    {
+        return $this->model->where('id', $id)->delete();
     }
 }

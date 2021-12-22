@@ -42,4 +42,9 @@ class RoleService
     {
         return $this->roleRepository->updateRole($id, $data);
     }
+
+    public function deleteRole($id)
+    {
+        return $this->roleRepository->deleteRole((int)$id);
+    }
 }

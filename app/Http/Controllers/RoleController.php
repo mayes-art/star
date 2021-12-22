@@ -9,6 +9,7 @@ use App\Http\Requests\Role\RoleListRequest;
 use App\Services\RoleService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Hash;
 
 class RoleController extends Controller
 {
@@ -56,7 +57,10 @@ class RoleController extends Controller
      */
     public function delete($id)
     {
-        // TODO 刪除角色
-        return response()->ok($id);
+        if(!$this->roleService->detail($id)) {
+            return response()->fail();
+        }
+
+        return response()->ok($this->roleService->deleteRole($id));
     }
 }
