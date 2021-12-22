@@ -12,4 +12,13 @@ return [
     'email' => '信箱',
     'nickname' => '暱稱',
     'status' => '狀態',
+    'member_username' => '會員帳號',
+    'member_password' => '會員密碼',
+    'member_password_confirmation' => '會員二次密碼',
+    'gender' => '性別',
+    'member_name' => '會員姓名',
+    'birthday' => '生日',
+    'phone' => '電話',
+    'email' => '信箱',
+    'member_id' => '會員編號',
 ];

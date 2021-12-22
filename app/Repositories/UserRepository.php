@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\User;
+use App\Constants\Pagination;
 
 class UserRepository extends BaseRepository
 {
@@ -20,7 +21,7 @@ class UserRepository extends BaseRepository
 
     public function getList()
     {
-        return $this->model->all();
+        return $this->model->paginate(Pagination::USER);
     }
 
     public function getOneById($id)

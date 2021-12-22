@@ -4,9 +4,12 @@ namespace App\Services;
 
 use App\Http\Resources\User\UserResource;
 use App\Repositories\UserRepository;
+use App\Traits\Pagination;
 
 class UserService
 {
+    use Pagination;
+
     protected $userRepository;
 
     public function __construct(UserRepository $userRepository)
@@ -16,7 +19,10 @@ class UserService
 
     public function getUsers()
     {
-        return UserResource::collection($this->userRepository->getList());
+        return $this->formatterResource(
+            $this->userRepository->getList(),
+            UserResource::class
+        );
     }
 
     public function getUser($id)
