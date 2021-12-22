@@ -35,6 +35,6 @@ class UserRepository extends BaseRepository
 
     public function editUser($id, $params)
     {
-        return $this->model->where('id', $id)->update($params);
+        return $this->model->find($id)->update($params);
     }
 }
