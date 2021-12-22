@@ -9,4 +9,12 @@ return [
     'is_empty' => '[:v] 查無資料',
     'required' => '[:v] 為必填!',
     'array' => '[:v] 資料格式不正確!',
+    'email' => '[:v] 資料格式不正確!',
+    'between' => '[:v] 長度為 :min-:max!',
+    'integer' => '[:v] 資料格式不正確!',
+    'string' => '[:v] 資料格式不正確!',
+    'gt' =>  '[:v] 必須大於 :value',
+    'in' =>  '[:v] 資料格式不正確',
+    'exists' => '資料不存在!',
+    'unique' => '[:v] 已重複!',
 ];
