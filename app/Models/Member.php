@@ -20,7 +20,7 @@ class Member extends Model
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
-        'username', 'password', 'gender', 'name', 'birthday', 'phone', 'email', 'address'
+        'username', 'password', 'status', 'level', 'gender', 'name', 'birthday', 'phone', 'email', 'address'
     ];
 
     public function setPasswordAttribute($value)
