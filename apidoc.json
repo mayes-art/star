@@ -1,0 +1,15 @@
+{
+    "title": "Star API文件",
+    "version": "0.0.0",
+    "name": "Star API文件",
+    "description": "電商後台對接相關說明文件",
+    "url": "",
+    "header": {
+        "title": "說明",
+        "filename": "header.md"
+    },
+    "footer": {
+        "title": "",
+        "filename": "footer.md"
+    }
+}

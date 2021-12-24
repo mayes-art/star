@@ -24,7 +24,8 @@ class RoleListRequest extends BaseRequest
     public function rules()
     {
         return [
-            'page' => 'required|gt:0'
+            'page' => 'required|gt:0',
+            'count' => 'required'
         ];
     }
 
@@ -33,6 +34,7 @@ class RoleListRequest extends BaseRequest
         return [
             'page.required' => __('messages.required', ['v' => __('params.page')]),
             'page.gt' => __('messages.gt', ['v' => 'params.page', 'value' => 0]),
+            'count.required' => __('messages.required', ['v' => __('params.count')]),
         ];
     }
 }
