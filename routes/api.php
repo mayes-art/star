@@ -3,7 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\MemberController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,6 +48,15 @@ Route::middleware(['token.verify'])->group(function () {
         Route::post('add', [RoleController::class, 'add']);
         Route::put('edit', [RoleController::class, 'edit']);
         Route::get('delete/{id}', [RoleController::class, 'delete']);
+    });
+
+    // 會員管理
+    Route::prefix('member')->group(function () {
+        Route::get('list', [MemberController::class, 'list']);
+        Route::post('info', [MemberController::class, 'info']);
+        Route::post('add', [MemberController::class, 'add']);
+        Route::put('edit', [MemberController::class, 'edit']);
+        Route::delete('delete', [MemberController::class, 'delete']);
     });
 
     // 商品管理
