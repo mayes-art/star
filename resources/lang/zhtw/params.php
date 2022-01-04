@@ -21,4 +21,5 @@ return [
     'phone'                        => '手機號碼',
     'member_id'                    => '會員編號',
     'count'                        => '筆數',
+    'name'                         => '名稱',
 ];

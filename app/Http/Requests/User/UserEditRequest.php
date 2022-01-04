@@ -37,7 +37,7 @@ class UserEditRequest extends BaseRequest
     public function messages()
     {
         return [
-            'id.required' => __('messages.id', ['v' => __('params.id')]),
+            'id.required' => __('messages.required', ['v' => __('params.id')]),
             'id.integer' => __('messages.integer', ['v' => __('params.id')]),
             'id.gt' => __('messages.gt', ['v' => __('params.id'), 'value' => 0]),
             'id.exists' => __('messages.exists'),
