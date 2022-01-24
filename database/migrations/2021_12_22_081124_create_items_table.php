@@ -17,7 +17,7 @@ class CreateItemsTable extends Migration
             $table->id()->comment('商品編號');
             $table->string('name')->comment('商品名稱');
             $table->integer('item_category_id')->comment('分類ID');
-            $table->integer('storage_id')->comment('儲位ID');
+            $table->integer('board_id')->comment('儲位ID');
             $table->string('description')->comment('商品描述');
             $table->decimal('price', 8, 2)->comment('商品價格');
             $table->integer('stock')->comment('庫存量');

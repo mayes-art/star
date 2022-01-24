@@ -32,14 +32,13 @@ class ItemCategoryController extends Controller
      *       "count": 15
      * }
      *
-     * @apiSuccess {Object} data
-     * @apiSuccess {Integer} data.id 商品類型ID
-     * @apiSuccess {String} data.name 商品類型名稱
-     * @apiSuccess {Object} data.items 商品清單
+     * @apiSuccess {Integer} id 商品類型ID
+     * @apiSuccess {String} name 商品類型名稱
+     * @apiSuccess {Object} items 商品清單
      * @apiSuccess {Integer} items.id 商品ID
      * @apiSuccess {String} items.name 商品角稱
      * @apiSuccess {Integer} items.category_id 商品類型ID
-     * @apiSuccess {Integer} items.storage_id 儲位ID
+     * @apiSuccess {Integer} items.board_id 儲位ID
      * @apiSuccess {String} items.description 商品描述
      * @apiSuccess {Number} items.price 商品價格
      * @apiSuccess {Integer} items.stock 庫存量
@@ -70,7 +69,7 @@ class ItemCategoryController extends Controller
      *                         "id": 1,
      *                         "name": "貓抓版",
      *                         "category_id": 1,
-     *                         "storage_id": 2,
+     *                         "board_id": 2,
      *                         "description": "大型貓抓板",
      *                         "price": "100.00",
      *                         "stock": 1,

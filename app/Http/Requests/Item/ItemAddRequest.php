@@ -27,7 +27,7 @@ class ItemAddRequest extends BaseRequest
         return [
             'name'        => 'required|string',
             'category_id' => 'required|integer|gt:0|exists:item_categories,id',
-            'storage_id'  => 'integer|gt:0',
+            'board_id'    => 'integer|gt:0',
             'description' => 'string|max:255',
             'price'       => 'required|numeric|gt:0',
             'stock'       => 'required|integer|gt:0',
@@ -48,8 +48,8 @@ class ItemAddRequest extends BaseRequest
             'category_id.exists' => __('messages.exists'),
 
             // TODO: 儲位驗證補齊
-            'storage_id.integer' => __('messages.integer', ['v' => __('params.storage_id')]),
-            'storage_id.gt' => __('messages.gt', ['v' => __('params.storage_id'), 'value' => 0]),
+            'board_id.integer' => __('messages.integer', ['v' => __('params.board_id')]),
+            'board_id.gt' => __('messages.gt', ['v' => __('params.board_id'), 'value' => 0]),
 
             'description.string' => __('messages.string', ['v' => __('params.description')]),
             'description.max' => __('messages.max', ['v' => __('params.description'), 'max' => 255]),

@@ -16,7 +16,7 @@ class Item extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $fillable = ['name', 'category_id', 'storage_id', 'description', 'price', 'stock', 'status', 'on_shelf', 'off_shelf'];
+    protected $fillable = ['name', 'category_id', 'board_id', 'description', 'price', 'stock', 'status', 'on_shelf', 'off_shelf'];
 
     public function category()
     {

@@ -32,19 +32,18 @@ class ItemController extends Controller
      *       "count": 15
      * }
      *
-     * @apiSuccess {Object} data
-     * @apiSuccess {Integer} data.id 商品ID
-     * @apiSuccess {String} data.name 商品名稱
-     * @apiSuccess {Integer} data.category_id 商品類型ID
-     * @apiSuccess {Integer} data.storage_id 儲位ID
-     * @apiSuccess {String} data.description 商品描述
-     * @apiSuccess {Number} data.price 商品價格
-     * @apiSuccess {Integer} data.stock 庫存量
-     * @apiSuccess {Integer} data.status 狀態(0:未進/1:上架/2:下架)
-     * @apiSuccess {String} data.created_at 新增時間
-     * @apiSuccess {String} data.updated_at 更新時間
-     * @apiSuccess {String} data.on_shelf 上架時間
-     * @apiSuccess {String} data.off_shelf 下架時間
+     * @apiSuccess {Integer} id 商品ID
+     * @apiSuccess {String} name 商品名稱
+     * @apiSuccess {Integer} category_id 商品類型ID
+     * @apiSuccess {Integer} board_id 儲位ID
+     * @apiSuccess {String} description 商品描述
+     * @apiSuccess {Number} price 商品價格
+     * @apiSuccess {Integer} stock 庫存量
+     * @apiSuccess {Integer} status 狀態(0:未進/1:上架/2:下架)
+     * @apiSuccess {String} created_at 新增時間
+     * @apiSuccess {String} updated_at 更新時間
+     * @apiSuccess {String} on_shelf 上架時間
+     * @apiSuccess {String} off_shelf 下架時間
      *
      * @apiSuccess {Object} pagination
      * @apiSuccess {Integer} pagination.total 總筆數
@@ -63,7 +62,7 @@ class ItemController extends Controller
      *               "id": 1,
      *               "name": "貓抓版",
      *               "category_id": 1,
-     *               "storage_id": 2,
+     *               "board_id": 2,
      *               "description": "大型貓抓板",
      *               "price": "100.00",
      *               "stock": 1,
@@ -96,19 +95,18 @@ class ItemController extends Controller
      * @apiName ItemInfo
      * @apiGroup Item
      *
-     * @apiSuccess {Object} data
-     * @apiSuccess {Integer} data.id 商品ID
-     * @apiSuccess {String} data.name 商品名稱
-     * @apiSuccess {Integer} data.category_id 商品類型ID
-     * @apiSuccess {Integer} data.storage_id 儲位ID
-     * @apiSuccess {String} data.description 商品描述
-     * @apiSuccess {Number} data.price 商品價格
-     * @apiSuccess {Integer} data.stock 庫存量
-     * @apiSuccess {Integer} data.status 狀態(0:未進/1:上架/2:下架)
-     * @apiSuccess {String} data.created_at 新增時間
-     * @apiSuccess {String} data.updated_at 更新時間
-     * @apiSuccess {String} data.on_shelf 上架時間
-     * @apiSuccess {String} data.off_shelf 下架時間
+     * @apiSuccess {Integer} id 商品ID
+     * @apiSuccess {String} name 商品名稱
+     * @apiSuccess {Integer} category_id 商品類型ID
+     * @apiSuccess {Integer} board_id 儲位ID
+     * @apiSuccess {String} description 商品描述
+     * @apiSuccess {Number} price 商品價格
+     * @apiSuccess {Integer} stock 庫存量
+     * @apiSuccess {Integer} status 狀態(0:未進/1:上架/2:下架)
+     * @apiSuccess {String} created_at 新增時間
+     * @apiSuccess {String} updated_at 更新時間
+     * @apiSuccess {String} on_shelf 上架時間
+     * @apiSuccess {String} off_shelf 下架時間
      *
      * @apiSuccess {Object} pagination
      * @apiSuccess {Integer} pagination.total 總筆數
@@ -125,7 +123,7 @@ class ItemController extends Controller
      *       "id": 1,
      *       "name": "貓抓版",
      *       "category_id": 1,
-     *       "storage_id": 2,
+     *       "board_id": 2,
      *       "description": "大型貓抓板",
      *       "price": "100.00",
      *       "stock": 1,
@@ -151,7 +149,7 @@ class ItemController extends Controller
      *
      * @apiParam {String} name 商品名稱
      * @apiParam {Integer} category_id 商品類型ID
-     * @apiParam {Integer} storage_id 儲位ID
+     * @apiParam {Integer} board_id 儲位ID
      * @apiParam {String} description 商品描述
      * @apiParam {Number} price 商品價格
      * @apiParam {Integer} stock 庫存量
@@ -163,7 +161,7 @@ class ItemController extends Controller
      * {
      *      "name": "自動飼料機",
      *      "category_id": 1,
-     *      "storage_id": 1,
+     *      "board_id": 1,
      *      "description": "貓奴必需用品之一",
      *      "price": 1000,
      *      "stock": 1,
@@ -189,7 +187,7 @@ class ItemController extends Controller
      * @apiParam {Integer} id 商品ID
      * @apiParam {String} name 商品名稱
      * @apiParam {Integer} category_id 商品類型ID
-     * @apiParam {Integer} storage_id 儲位ID
+     * @apiParam {Integer} board_id 儲位ID
      * @apiParam {String} description 商品描述
      * @apiParam {Number} price 商品價格
      * @apiParam {Integer} stock 庫存量
@@ -202,7 +200,7 @@ class ItemController extends Controller
      *      "id": 1,
      *      "name": "自動飼料機",
      *      "category_id": 1,
-     *      "storage_id": 1,
+     *      "board_id": 1,
      *      "description": "貓奴必需用品之一",
      *      "price": 1000,
      *      "stock": 1,
