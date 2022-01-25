@@ -18,7 +18,6 @@ class ItemCategoryResource extends JsonResource
         return [
             'id'    => $this->id,
             'name'  => $this->name,
-            'items' => ItemResource::collection($this->items),
         ];
     }
 }
