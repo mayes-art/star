@@ -18,4 +18,14 @@ class Pagination
      * 會員每頁筆數
      */
     const MEMBER = 10;
+
+    /**
+     * 商品每頁筆數
+     */
+    const ITEM = 10;
+
+    /**
+     * 商品類型每頁筆數
+     */
+    const ITEMCATEGORY = 10;
 }

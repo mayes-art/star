@@ -22,4 +22,7 @@ return [
     'unique' => '[:v] 已重複!',
     'date' => '[:v] 資料格式不正確!',
     'confirmed' => '[:v] 兩個密碼欄位輸入的值必須相同!',
+    'max' => '[:v] 超過最大長度(:max)!',
+    'numeric' => '[:v] 資料格式不正確!',
+    'date_format' => '[:v] 格式應為(:format)!',
 ];

@@ -4,6 +4,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ItemCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,12 +63,19 @@ Route::middleware(['token.verify'])->group(function () {
 
     // 商品管理
     Route::prefix('item')->group(function () {
-
+        Route::get('list', [ItemController::class, 'list']);
+        Route::post('add', [ItemController::class, 'add']);
+        Route::get('{id}', [ItemController::class, 'info']);
+        Route::put('edit', [ItemController::class, 'edit']);
+        Route::delete('{id}', [ItemController::class, 'delete']);
     });
 
     // 商品類型管理
     Route::prefix('item-category')->group(function () {
-
+        Route::get('list', [ItemCategoryController::class, 'list']);
+        Route::post('add', [ItemCategoryController::class, 'add']);
+        Route::put('edit', [ItemCategoryController::class, 'edit']);
+        Route::delete('{id}', [ItemCategoryController::class, 'delete']);
     });
 
     // 訂單管理
